@@ -10,7 +10,7 @@ export default function DesktopHeader({ navLinks }: { navLinks: NavLink[] }) {
 
   return (
     <section className="w-full hidden md:block border-b border-b-[#c7c7c7] shadow-lg">
-      <header className="w-full py-5 px-5 flex items-center justify-between max-w-[1000px] mx-auto">
+      <header className="w-full py-5 px-5 flex items-center justify-between max-w-[1100px] mx-auto">
         <div
           className="cursor-pointer w-[100px]"
           onClick={() => router.push("/")}
