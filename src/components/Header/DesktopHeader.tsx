@@ -4,6 +4,7 @@ import React from "react";
 import { NavLink } from "../../../types/NavLink";
 import { useRouter } from "next/navigation";
 import { IoSearch } from "react-icons/io5";
+import Link from "next/link";
 
 export default function DesktopHeader({ navLinks }: { navLinks: NavLink[] }) {
   const router = useRouter();
@@ -30,7 +31,7 @@ export default function DesktopHeader({ navLinks }: { navLinks: NavLink[] }) {
               className="text-[12px] lg:text-base cursor-pointer"
               key={item.id}
             >
-              {item.title}
+              <Link href={item.link}>{item.title}</Link>
             </li>
           ))}
         </ul>

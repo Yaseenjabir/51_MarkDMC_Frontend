@@ -43,6 +43,7 @@ export default function MobileHeader({ navLinks }: { navLinks: NavLink[] }) {
         <ul className="w-full flex flex-col gap-3">
           {navLinks.map((item) => (
             <li
+              onClick={() => setIsActive(false)}
               key={item.id}
               className={`cursor-pointer border-b-[2px] border-b-transparent hover:border-b-sage-green transition-all ease-in-out duration-300 rounded-br-xl`}
             >

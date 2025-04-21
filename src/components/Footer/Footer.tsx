@@ -38,16 +38,16 @@ export default function Footer() {
               <Link href={"/"}>Home</Link>
             </li>
             <li className="hover:underline text-[15px] w-min text-nowrap">
-              <Link href={"/"}>Services</Link>
+              <Link href={"/services"}>Services</Link>
             </li>
             <li className="hover:underline text-[15px] w-min text-nowrap">
-              <Link href={"/"}>About</Link>
+              <Link href={"/about"}>About</Link>
             </li>
             <li className="hover:underline text-[15px] w-min text-nowrap">
-              <Link href={"/"}>Contact</Link>
+              <Link href={"/contact"}>Contact</Link>
             </li>
             <li className="hover:underline text-[15px] w-min text-nowrap">
-              <Link href={"/"}>Blog</Link>
+              <Link href={"/"}>Portal</Link>
             </li>
           </ul>
         </div>
