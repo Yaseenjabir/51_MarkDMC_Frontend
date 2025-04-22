@@ -4,6 +4,7 @@ import HeroSection from "@/components/Home/HeroSection";
 import Strategy from "@/components/Home/Strategy";
 import TheProblem from "@/components/Home/TheProblem";
 import TurnLeads from "@/components/Home/TurnLeads";
+import UnfairAdvantage from "@/components/Home/UnfairAdvantage";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <Strategy />
       <AdvanceTech />
       <TurnLeads />
+      <UnfairAdvantage />
       <TheProblem />
       <BestBussiness />
     </main>

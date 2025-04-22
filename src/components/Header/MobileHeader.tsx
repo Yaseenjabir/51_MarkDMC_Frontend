@@ -5,9 +5,11 @@ import Link from "next/link";
 import React, { useState } from "react";
 import { RxCross2, RxHamburgerMenu } from "react-icons/rx";
 import { NavLink } from "../../../types/NavLink";
+import { useRouter } from "next/navigation";
 
 export default function MobileHeader({ navLinks }: { navLinks: NavLink[] }) {
   const [isActive, setIsActive] = useState(false);
+  const router = useRouter();
 
   return (
     <header className="px-5 md:hidden py-3 w-full flex items-center justify-between border-b border-b-[#e0e0e0]">
@@ -15,7 +17,7 @@ export default function MobileHeader({ navLinks }: { navLinks: NavLink[] }) {
         className="text-2xl hover:rotate-45 transition-all ease-in-out duration-500 cursor-pointer"
         onClick={() => setIsActive(true)}
       />
-      <div className="w-[70px]">
+      <div className="w-[60px] cursor-pointer" onClick={() => router.push("/")}>
         <Image
           className="w-full"
           src={"/logo.png"}

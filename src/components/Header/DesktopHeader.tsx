@@ -5,15 +5,17 @@ import { NavLink } from "../../../types/NavLink";
 import { useRouter } from "next/navigation";
 import { IoSearch } from "react-icons/io5";
 import Link from "next/link";
+import { useTransitionContext } from "@/context/context";
 
 export default function DesktopHeader({ navLinks }: { navLinks: NavLink[] }) {
   const router = useRouter();
+  const { toggleTransition } = useTransitionContext();
 
   return (
     <section className="w-full hidden md:block border-b border-b-[#c7c7c7] shadow-lg">
       <header className="w-full py-5 px-5 flex items-center justify-between max-w-[1100px] mx-auto">
         <div
-          className="cursor-pointer w-[100px]"
+          className="cursor-pointer w-[70px]"
           onClick={() => router.push("/")}
         >
           <Image
@@ -36,10 +38,16 @@ export default function DesktopHeader({ navLinks }: { navLinks: NavLink[] }) {
           ))}
         </ul>
         <div className="flex items-center justify-center gap-5">
-          <button className="text-[12px] border border-[#9c9c9c] p-2 rounded-lg bg-sage-green text-white hover:bg-deep-green cursor-pointer font-semibold transition-all ease-in-out duration-300">
+          <button
+            onClick={() => router.push("/contact")}
+            className="text-[12px] border border-[#9c9c9c] p-2 rounded-lg bg-sage-green text-white hover:bg-deep-green cursor-pointer font-semibold transition-all ease-in-out duration-300"
+          >
             Get a quote
           </button>
-          <IoSearch className="text-xl cursor-pointer" />
+          <IoSearch
+            onClick={toggleTransition}
+            className="text-xl cursor-pointer"
+          />
         </div>
       </header>
     </section>

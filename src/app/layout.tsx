@@ -3,6 +3,8 @@ import { Geist_Mono, Montserrat } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
+import Search from "@/components/Shared/Search";
+import { ContextProvider } from "@/context/context";
 // import Search from "@/components/Shared/Search";
 
 const montserrat = Montserrat({
@@ -29,10 +31,12 @@ export default function RootLayout({
       <body
         className={`${montserrat.className} ${geistMono.variable} antialiased`}
       >
-        <Header />
-        {children}
-        {/* <Search /> */}
-        <Footer />
+        <ContextProvider>
+          <Header />
+          {children}
+          <Search />
+          <Footer />
+        </ContextProvider>
       </body>
     </html>
   );

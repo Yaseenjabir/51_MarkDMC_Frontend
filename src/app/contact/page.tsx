@@ -98,7 +98,7 @@ const Page = () => {
   }
 
   return (
-    <section className="bg-white w-full">
+    <section className="w-full">
       <section className="w-full py-10 px-5 max-w-[700px] lg:max-w-[960px] xl:max-w-[1140px] mx-auto md:mb-10 md:px-0">
         {/* Contact us description  */}
         <div className="text-titleColor flex flex-col gap-2 md:py-10 md:px-0 lg:gap-3 xl:gap-5">
@@ -107,9 +107,9 @@ const Page = () => {
           </h1>
           <p className="md:font-semibold md:text-gray-600 md:max-w-[620px] md:text-lg lg:font-normal lg:text-base">
             Please fill out the form below with your details, including the type
-            of vehicle you are interested in. Let us know if you have any
-            specific queries or need assistance with a door reference. We will
-            get back to you as soon as possible!
+            of service you are interested in. Let us know if you have any
+            specific queries or need assistance with a service reference. We
+            will get back to you as soon as possible!
           </p>
         </div>
         {/* Contact us form  */}
