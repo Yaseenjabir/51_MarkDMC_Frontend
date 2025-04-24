@@ -10,7 +10,7 @@ export default function Search() {
 
   return (
     <section
-      className={`w-full h-screen bg-blue-400 flex flex-col items-center justify-center fixed transition-all ease-in-out duration-300 top-0 left-0 z-50 px-20 ${
+      className={`w-full h-screen bg-dark-blue flex flex-col items-center justify-center fixed transition-all ease-in-out duration-300 top-0 left-0 z-50 px-20 ${
         active ? "opacity-100 visible" : "opacity-0 invisible"
       }`}
     >

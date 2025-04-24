@@ -5,11 +5,12 @@
 
 @theme {
   --color-soft-white: #f1f7ed;
-  --color-deep-green: #243e36;
-  --color-sage-green: #7ca982;
-  --color-pale-green: #e0eec6;
-  --color-mustard: #c2a83e;
-  --color-mustard-dark: #9c8732;
+  --color-deep-green: #f29544;
+  --color-sage-green: #f28749;
+  --color-pale-green: #f2b33d;
+  --color-mustard: #f28749;
+  --color-mustard-dark: #f29544;
+  --color-dark-blue: #124c59;
 }
 .myBackground {
   background: linear-gradient(to bottom, #b4cfb9, #f0f7da);

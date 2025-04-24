@@ -85,10 +85,10 @@ export default function Page() {
                 className="w-full p-5 flex flex-col items-center justify-center text-center shadow-lg rounded-xl hover:scale-105 transition-all ease-in-out duration-300"
               >
                 <div className="relative">
-                  <div className="text-4xl rounded-full p-4 bg-orange-400 shadow-orange-300 shadow-xl text-white">
+                  <div className="text-4xl rounded-full p-4 bg-deep-green shadow-orange-300 shadow-xl text-white">
                     {item.logo}
                   </div>
-                  <span className="p-1 rounded-full bg-deep-green text-white absolute -bottom-2 -right-2 font-bold w-8 h-8 flex items-center justify-center">
+                  <span className="p-1 rounded-full border border-dark-blue bg-deep-green text-white absolute -bottom-2 -right-2 font-bold w-8 h-8 flex items-center justify-center">
                     {index + 1}
                   </span>
                 </div>

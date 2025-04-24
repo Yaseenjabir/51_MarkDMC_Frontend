@@ -6,7 +6,7 @@ import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
 export default function Footer() {
   return (
     <footer className="w-full">
-      <div className="w-full px-5 bg-[#0F0C2C] text-white">
+      <div className="w-full px-5 bg-dark-blue text-white">
         <div className="w-full py-20 grid grid-cols-1 place-content-center justify-items-center gap-8 md:grid-cols-2 lg:grid-cols-3 max-w-[1100px] mx-auto">
           {/* Logo Section  */}
           <div className="w-full flex flex-col gap-5">
@@ -63,7 +63,7 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      <div className="w-full py-3 px-5 bg-[#231e50] text-white text-[10px] text-center flex flex-col gap-2">
+      <div className="w-full py-3 px-5 bg-[#205f6d] text-white text-[10px] text-center flex flex-col gap-2">
         <p>©2024 Mark DMC. All Rights Reserved.</p>
         <div>
           <Link href={"/privacy-policy"} className="underline cursor-pointer">

@@ -68,7 +68,7 @@ export default function TurnLeads() {
                 <div className={`text-5xl p-3 rounded-lg ${item.color}`}>
                   {item.logo}
                 </div>
-                <h1 className="text-2xl font-bold text-mustard-dark h-[65px]">
+                <h1 className="text-2xl font-bold text-dark-blue h-[65px]">
                   {item.h1}
                 </h1>
                 <p className="font-medium h-[47px]">{item.p}</p>

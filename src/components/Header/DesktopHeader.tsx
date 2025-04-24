@@ -10,6 +10,7 @@ import { useTransitionContext } from "@/context/context";
 export default function DesktopHeader({ navLinks }: { navLinks: NavLink[] }) {
   const router = useRouter();
   const { toggleTransition } = useTransitionContext();
+  const [activeIndex, setActiveIndex] = React.useState<null | number>(null);
 
   return (
     <section className="w-full hidden md:block border-b border-b-[#c7c7c7] shadow-lg">
@@ -30,7 +31,11 @@ export default function DesktopHeader({ navLinks }: { navLinks: NavLink[] }) {
         <ul className="flex items-center justify-center gap-6">
           {navLinks.map((item) => (
             <li
-              className="text-[12px] lg:text-base cursor-pointer"
+              onMouseEnter={() => setActiveIndex(item.id)}
+              onMouseLeave={() => setActiveIndex(null)}
+              className={`text-[12px] lg:text-base cursor-pointer transition-all ease-in-out duration-300 ${
+                activeIndex === item.id && "scale-110"
+              }`}
               key={item.id}
             >
               <Link href={item.link}>{item.title}</Link>
@@ -40,7 +45,7 @@ export default function DesktopHeader({ navLinks }: { navLinks: NavLink[] }) {
         <div className="flex items-center justify-center gap-5">
           <button
             onClick={() => router.push("/contact")}
-            className="text-[12px] border border-[#9c9c9c] p-2 rounded-lg bg-sage-green text-white hover:bg-deep-green cursor-pointer font-semibold transition-all ease-in-out duration-300"
+            className="text-[12px] p-2 rounded-lg border border-transparent bg-sage-green text-white hover:bg-transparent hover:border-sage-green hover:text-deep-green cursor-pointer font-semibold transition-all ease-in-out duration-300"
           >
             Get a quote
           </button>

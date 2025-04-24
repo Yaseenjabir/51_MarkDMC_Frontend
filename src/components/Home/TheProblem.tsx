@@ -3,7 +3,7 @@ import React from "react";
 
 export default function TheProblem() {
   return (
-    <section className="w-full bg-[#0F0C2C] relative">
+    <section className="w-full bg-dark-blue relative">
       <div className="w-full py-20 pb-32 flex flex-col items-center justify-center px-5 text-white mt-10 gap-10 md:gap-20 md:flex-row mx-auto max-w-[1100px]">
         <div className="w-full text-center font-bold">
           <h1 className="text-sm text-[#00adc2] uppercase">The problem</h1>

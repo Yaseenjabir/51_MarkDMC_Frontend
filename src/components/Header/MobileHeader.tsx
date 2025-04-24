@@ -28,7 +28,7 @@ export default function MobileHeader({ navLinks }: { navLinks: NavLink[] }) {
         />
       </div>
       <div className="flex items-center gap-10">
-        <button className="text-[12px] border border-[#9c9c9c] p-2 rounded-lg bg-sage-green text-white hover:bg-deep-green cursor-pointer font-semibold transition-all ease-in-out duration-300">
+        <button className="text-[12px] border border-transparent p-2 rounded-lg bg-sage-green text-white hover:bg-deep-green cursor-pointer font-semibold transition-all ease-in-out duration-300">
           Get a quote
         </button>
       </div>
@@ -53,7 +53,7 @@ export default function MobileHeader({ navLinks }: { navLinks: NavLink[] }) {
             </li>
           ))}
         </ul>
-        <button className="text-[12px] w-full border border-[#9c9c9c] p-2 rounded-lg bg-sage-green text-white hover:bg-deep-green cursor-pointer font-semibold transition-all ease-in-out duration-300">
+        <button className="text-[12px] w-full border border-transparent p-2 rounded-lg bg-sage-green text-white hover:bg-deep-green cursor-pointer font-semibold transition-all ease-in-out duration-300">
           Get a quote
         </button>
         <RxCross2

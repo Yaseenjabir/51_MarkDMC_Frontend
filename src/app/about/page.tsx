@@ -51,24 +51,24 @@ export default function page() {
             </p>
             <div className="w-full grid grid-cols-3 place-content-center place-items-center mt-5">
               <div className="flex gap-2 flex-col items-center border-r p-2 px-4">
-                <span className="font-semibold text-4xl text-orange-400">
+                <span className="font-semibold text-4xl text-deep-green">
                   27K
                 </span>
                 <span className="text-sm">Active Clients</span>
               </div>
               <div className="flex gap-2 flex-col items-center border-r p-2 px-4">
-                <span className="font-semibold text-4xl text-orange-400">
+                <span className="font-semibold text-4xl text-deep-green">
                   985+
                 </span>
                 <span className="text-sm">Projects Done</span>
               </div>
               <div className="flex gap-2 flex-col items-center border-r p-2 px-4">
-                <span className="font-semibold text-4xl text-orange-400">
+                <span className="font-semibold text-4xl text-deep-green">
                   78+
                 </span>
                 <span className="text-sm">Members</span>
               </div>
-              <button className="border border-orange-400 py-2 px-4 rounded-full text-sm mt-4 cursor-pointer text-orange-500 font-semibold hover:bg-orange-400 hover:text-white transition-all ease-in-out duration-300">
+              <button className="border border-deep-green py-2 px-4 rounded-full text-sm mt-4 cursor-pointer text-orange-500 font-semibold hover:bg-deep-green hover:text-white transition-all ease-in-out duration-300">
                 Learn More
               </button>
             </div>
@@ -168,7 +168,7 @@ export default function page() {
           </div>
         </div>
       </section>
-      <div className="w-full bg-orange-500 text-white px-5 py-10 text-center flex flex-col gap-5">
+      <div className="w-full bg-deep-green text-white px-5 py-10 text-center flex flex-col gap-5">
         <h1 className="font-bold text-3xl md:text-4xl lg:text-5xl">
           Let’s Get You <span className="text-black">Real Results</span>
         </h1>
@@ -176,7 +176,7 @@ export default function page() {
           Ready to drive more revenue from your digital marketing? Let’s make it
           happen. Contact us today, and let’s get to work.
         </p>
-        <button className="border border-white text-white font-semibold text-sm px-4 py-2 rounded-full w-min text-nowrap self-center hover:bg-white hover:text-orange-500 hover:border-orange-500 cursor-pointer transition-all ease-in-out duration-300">
+        <button className="border border-white text-white font-semibold text-sm px-4 py-2 rounded-full w-min text-nowrap self-center hover:bg-white hover:text-orange-500 hover:border-deep-green cursor-pointer transition-all ease-in-out duration-300">
           Talk to our team
         </button>
       </div>
