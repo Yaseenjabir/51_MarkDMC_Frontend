@@ -264,6 +264,7 @@ export default function ProductListing() {
               <div className="flex flex-row flex-wrap gap-4">
                 {/* Category Filter */}
                 <div className="flex-1 min-w-[150px]">
+                  <h1 className="font-semibold mb-1 text-dark-blue">Brand</h1>
                   <Select
                     onValueChange={(value) =>
                       handleFilterChange("category", value)
@@ -286,6 +287,10 @@ export default function ProductListing() {
 
                 {/* Processor Filter */}
                 <div className="flex-1 min-w-[150px]">
+                  <h1 className="font-semibold mb-1 text-dark-blue">
+                    Processor
+                  </h1>
+
                   <Select
                     onValueChange={(value) =>
                       handleFilterChange("processor", value)
@@ -308,6 +313,8 @@ export default function ProductListing() {
 
                 {/* RAM Filter */}
                 <div className="flex-1 min-w-[150px]">
+                  <h1 className="font-semibold mb-1 text-dark-blue">RAM</h1>
+
                   <Select
                     onValueChange={(value) => handleFilterChange("ram", value)}
                     value={filters.ram}
@@ -328,6 +335,7 @@ export default function ProductListing() {
 
                 {/* SSD Filter */}
                 <div className="flex-1 min-w-[150px]">
+                  <h1 className="font-semibold mb-1 text-dark-blue">SSD</h1>
                   <Select
                     onValueChange={(value) => handleFilterChange("ssd", value)}
                     value={filters.ssd}
