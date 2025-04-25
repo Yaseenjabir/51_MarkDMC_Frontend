@@ -54,11 +54,10 @@ interface FilterOptions {
 }
 
 interface Filters {
-  category: string[];
-  processor: string[];
-  ram: string[];
-  ssd: string[];
-  screenSize: string[];
+  category: string;
+  processor: string;
+  ram: string;
+  ssd: string;
 }
 
 // Define laptop data
@@ -172,11 +171,10 @@ const formSchema = z.object({
 
 export default function ProductListing() {
   const [filters, setFilters] = useState<Filters>({
-    category: [],
-    processor: [],
-    ram: [],
-    ssd: [],
-    screenSize: [],
+    category: "all",
+    processor: "all",
+    ram: "all",
+    ssd: "all",
   });
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [selectedLaptopId, setSelectedLaptopId] = useState<number | null>(null);
@@ -192,30 +190,19 @@ export default function ProductListing() {
   });
 
   const handleFilterChange = (filterType: keyof Filters, value: string) => {
-    setFilters((prev) => {
-      const updatedFilters = { ...prev };
-      if (updatedFilters[filterType].includes(value)) {
-        updatedFilters[filterType] = updatedFilters[filterType].filter(
-          (item) => item !== value
-        );
-      } else {
-        updatedFilters[filterType] = [...updatedFilters[filterType], value];
-      }
-      return updatedFilters;
-    });
+    setFilters((prev) => ({
+      ...prev,
+      [filterType]: value,
+    }));
     setCurrentPage(1); // Reset to first page when filters change
   };
 
   const filteredLaptops = laptops.filter((laptop) => {
     return (
-      (filters.category.length === 0 ||
-        filters.category.includes(laptop.category)) &&
-      (filters.processor.length === 0 ||
-        filters.processor.includes(laptop.processor)) &&
-      (filters.ram.length === 0 || filters.ram.includes(laptop.ram)) &&
-      (filters.ssd.length === 0 || filters.ssd.includes(laptop.ssd)) &&
-      (filters.screenSize.length === 0 ||
-        filters.screenSize.includes(laptop.screenSize))
+      (filters.category === "all" || laptop.category === filters.category) &&
+      (filters.processor === "all" || laptop.processor === filters.processor) &&
+      (filters.ram === "all" || laptop.ram === filters.ram) &&
+      (filters.ssd === "all" || laptop.ssd === filters.ssd)
     );
   });
 
@@ -265,100 +252,98 @@ export default function ProductListing() {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <div className="flex flex-col lg:flex-row gap-6">
+      <div className="flex flex-col gap-6">
         {/* Filter Sidebar */}
         <Accordion type="single" collapsible defaultValue="item-1">
           <AccordionItem
             value="item-1"
-            className="bg-white rounded-xl shadow-lg px-5 lg:w-[250px]"
+            className="bg-white rounded-xl shadow-lg px-5"
           >
             <AccordionTrigger>Filters</AccordionTrigger>
             <AccordionContent>
-              <div>
+              <div className="flex flex-row flex-wrap gap-4">
                 {/* Category Filter */}
-                <div className="mb-6">
-                  <h3 className="font-medium text-gray-700 mb-3">Category</h3>
-                  {filterOptions.categories.map((category) => (
-                    <label key={category} className="flex items-center mb-2">
-                      <input
-                        type="checkbox"
-                        className="mr-2 h-4 w-4 text-deep-green"
-                        checked={filters.category.includes(category)}
-                        onChange={() =>
-                          handleFilterChange("category", category)
-                        }
-                      />
-                      <span className="text-gray-600">{category}</span>
-                    </label>
-                  ))}
+                <div className="flex-1 min-w-[150px]">
+                  <Select
+                    onValueChange={(value) =>
+                      handleFilterChange("category", value)
+                    }
+                    value={filters.category}
+                  >
+                    <SelectTrigger className="border-deep-green focus:ring-deep-green w-full">
+                      <SelectValue placeholder="Select Category" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="all">All</SelectItem>
+                      {filterOptions.categories.map((category) => (
+                        <SelectItem key={category} value={category}>
+                          {category}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
                 </div>
 
                 {/* Processor Filter */}
-                <div className="mb-6">
-                  <h3 className="font-medium text-gray-700 mb-3">Processor</h3>
-                  {filterOptions.processors.map((processor) => (
-                    <label key={processor} className="flex items-center mb-2">
-                      <input
-                        type="checkbox"
-                        className="mr-2 h-4 w-4 text-deep-green"
-                        checked={filters.processor.includes(processor)}
-                        onChange={() =>
-                          handleFilterChange("processor", processor)
-                        }
-                      />
-                      <span className="text-gray-600">{processor}</span>
-                    </label>
-                  ))}
+                <div className="flex-1 min-w-[150px]">
+                  <Select
+                    onValueChange={(value) =>
+                      handleFilterChange("processor", value)
+                    }
+                    value={filters.processor}
+                  >
+                    <SelectTrigger className="border-deep-green focus:ring-deep-green w-full">
+                      <SelectValue placeholder="Select Processor" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="all">All</SelectItem>
+                      {filterOptions.processors.map((processor) => (
+                        <SelectItem key={processor} value={processor}>
+                          {processor}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
                 </div>
 
                 {/* RAM Filter */}
-                <div className="mb-6">
-                  <h3 className="font-medium text-gray-700 mb-3">RAM</h3>
-                  {filterOptions.ram.map((ram) => (
-                    <label key={ram} className="flex items-center mb-2">
-                      <input
-                        type="checkbox"
-                        className="mr-2 h-4 w-4 text-deep-green"
-                        checked={filters.ram.includes(ram)}
-                        onChange={() => handleFilterChange("ram", ram)}
-                      />
-                      <span className="text-gray-600">{ram}</span>
-                    </label>
-                  ))}
+                <div className="flex-1 min-w-[150px]">
+                  <Select
+                    onValueChange={(value) => handleFilterChange("ram", value)}
+                    value={filters.ram}
+                  >
+                    <SelectTrigger className="border-deep-green focus:ring-deep-green w-full">
+                      <SelectValue placeholder="Select RAM" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="all">All</SelectItem>
+                      {filterOptions.ram.map((ram) => (
+                        <SelectItem key={ram} value={ram}>
+                          {ram}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
                 </div>
 
                 {/* SSD Filter */}
-                <div className="mb-6">
-                  <h3 className="font-medium text-gray-700 mb-3">SSD</h3>
-                  {filterOptions.ssd.map((ssd) => (
-                    <label key={ssd} className="flex items-center mb-2">
-                      <input
-                        type="checkbox"
-                        className="mr-2 h-4 w-4 text-deep-green"
-                        checked={filters.ssd.includes(ssd)}
-                        onChange={() => handleFilterChange("ssd", ssd)}
-                      />
-                      <span className="text-gray-600">{ssd}</span>
-                    </label>
-                  ))}
-                </div>
-
-                {/* Screen Size Filter */}
-                <div>
-                  <h3 className="font-medium text-gray-700 mb-3">
-                    Screen Size
-                  </h3>
-                  {filterOptions.screenSize.map((size) => (
-                    <label key={size} className="flex items-center mb-2">
-                      <input
-                        type="checkbox"
-                        className="mr-2 h-4 w-4 text-deep-green"
-                        checked={filters.screenSize.includes(size)}
-                        onChange={() => handleFilterChange("screenSize", size)}
-                      />
-                      <span className="text-gray-600">{size}</span>
-                    </label>
-                  ))}
+                <div className="flex-1 min-w-[150px]">
+                  <Select
+                    onValueChange={(value) => handleFilterChange("ssd", value)}
+                    value={filters.ssd}
+                  >
+                    <SelectTrigger className="border-deep-green focus:ring-deep-green w-full">
+                      <SelectValue placeholder="Select SSD" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="all">All</SelectItem>
+                      {filterOptions.ssd.map((ssd) => (
+                        <SelectItem key={ssd} value={ssd}>
+                          {ssd}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
                 </div>
               </div>
             </AccordionContent>
@@ -366,8 +351,8 @@ export default function ProductListing() {
         </Accordion>
 
         {/* Product Grid */}
-        <div className="lg:w-3/4">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="w-full">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {paginatedLaptops.length > 0 ? (
               paginatedLaptops.map((laptop) => (
                 <div
