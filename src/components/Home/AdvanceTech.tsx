@@ -3,7 +3,7 @@ import React from "react";
 
 export default function AdvanceTech() {
   return (
-    <section className="w-full relative bg-[url('/assets/tech.png')] bg-top bg-cover">
+    <section className="w-full relative bg-[url('/assets/yaseen-shapeee.png')] bg-top bg-cover">
       <div className="w-full">
         <div className="w-full py-20 px-5 text-white flex items-center justify-center relative text-center md:text-start flex-col gap-20 mx-auto md:flex-row-reverse max-w-[900px] mt-20">
           <div className="w-[70%]">

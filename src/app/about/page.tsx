@@ -1,6 +1,15 @@
+import { Metadata } from "next";
 import Image from "next/image";
 import React from "react";
 import { IoMdCheckmark } from "react-icons/io";
+
+export const metadata: Metadata = {
+  title: "About Mark DMC | Strategic Digital Marketing Agency",
+  description:
+    "Learn about Mark DMC, a results-driven digital marketing agency. We specialize in SEO, paid media, content marketing, and web development to drive client growth.",
+  keywords:
+    "about Mark DMC, digital marketing agency, SEO services, content marketing, web development, client results, strategic marketing",
+};
 
 export default function page() {
   return (
@@ -15,9 +24,9 @@ export default function page() {
             Effective Digital Marketing
           </h1>
           <p>
-            At Intero Digital, strategy is at the heart of everything we do. We
-            team up with our clients to craft and execute a digital marketing
-            plan that’s not just smart but actually gets results. No fluff, no
+            At MarkDMC, strategy is at the heart of everything we do. We team up
+            with our clients to craft and execute a digital marketing plan
+            that’s not just smart but actually gets results. No fluff, no
             guesswork — just real, measurable growth for your business.
           </p>
           <button className="border border-mustard hover:bg-mustard hover:text-white cursor-pointer transition-all ease-in-out duration-300 w-min text-nowrap py-2 px-4 rounded-full font-semibold text-mustard-dark text-sm md:self-center">

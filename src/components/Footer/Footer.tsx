@@ -12,7 +12,7 @@ export default function Footer() {
           <div className="w-full flex flex-col gap-5">
             <div className="w-[100px]">
               <Image
-                src={"/logo.png"}
+                src={"/footerLogo.png"}
                 alt="logo"
                 width={100}
                 height={100}

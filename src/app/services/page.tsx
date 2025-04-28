@@ -8,6 +8,15 @@ import { TfiMoney, TfiShareAlt } from "react-icons/tfi";
 import { IoMagnetOutline } from "react-icons/io5";
 import { IoIosCheckmarkCircleOutline } from "react-icons/io";
 import Link from "next/link";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Services | Mark DMC Digital Marketing Solutions",
+  description:
+    "Explore Mark DMC’s digital marketing services, including SEO, paid media, content marketing, web development, and more, designed to drive measurable results.",
+  keywords:
+    "Mark DMC services, digital marketing, SEO, paid media, content marketing, web development, video marketing, Amazon services, strategic marketing",
+};
 
 export default function Page() {
   const data = [
