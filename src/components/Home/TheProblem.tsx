@@ -16,6 +16,16 @@ export default function TheProblem() {
             approach. We understand the challenges of digital marketing
             firsthand.
           </p>
+          <div className="w-[50%] mx-auto mt-10">
+            <Image
+              src={"/assets/Theproblem.png"}
+              height={600}
+              width={500}
+              layout="responsive"
+              alt="The Problem"
+              className="w-full h-full"
+            />
+          </div>
         </div>
         <div className="w-full flex flex-col gap-10">
           <div className="w-[80%] border border-white rounded-2xl p-8 flex flex-col items-center justify-center self-start gap-5 text-start">

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 export default function AdvanceTech() {
@@ -27,7 +28,7 @@ export default function AdvanceTech() {
               accurately forecasting search results.
             </p>
             <button className="uppercase py-2 px-4 rounded-xl text-[12px] font-semibold bg-mustard text-white">
-              See More
+              <Link href={"/services"}>See More</Link>
             </button>
           </div>
         </div>

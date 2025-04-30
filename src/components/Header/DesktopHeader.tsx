@@ -3,16 +3,16 @@ import Image from "next/image";
 import React from "react";
 import { NavLink } from "../../../types/NavLink";
 import { useRouter } from "next/navigation";
-import { IoSearch } from "react-icons/io5";
+// import { IoSearch } from "react-icons/io5";
 import Link from "next/link";
-import { useTransitionContext } from "@/context/context";
+// import { useTransitionContext } from "@/context/context";
 
 export default function DesktopHeader({ navLinks }: { navLinks: NavLink[] }) {
   const router = useRouter();
-  const { toggleTransition } = useTransitionContext();
+  // const { toggleTransition } = useTransitionContext();
   const [activeIndex, setActiveIndex] = React.useState<null | number>(null);
-
-  return (
+  //www.smartinsights.com/wp-content/uploads/2022/02/2022-race-diagram.png
+  https: return (
     <section className="w-full hidden md:block border-b border-b-[#c7c7c7] shadow-lg">
       <header className="w-full py-5 px-5 flex items-center justify-between max-w-[1100px] mx-auto">
         <div
@@ -49,10 +49,10 @@ export default function DesktopHeader({ navLinks }: { navLinks: NavLink[] }) {
           >
             Get a quote
           </button>
-          <IoSearch
+          {/* <IoSearch
             onClick={toggleTransition}
             className="text-xl cursor-pointer"
-          />
+          /> */}
         </div>
       </header>
     </section>

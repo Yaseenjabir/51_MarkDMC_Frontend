@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 export default function HeroSection() {
@@ -19,7 +20,7 @@ export default function HeroSection() {
             and reach more customers.
           </p>
           <button className="py-3 px-5 rounded-lg shadow text-sm uppercase font-semibold w-min text-nowrap bg-deep-green text-white cursor-pointer border border-transparent hover:bg-transparent hover:text-deep-green hover:border-deep-green transition-all ease-in-out duration-300">
-            Get a proposal
+            <Link href={"/contact"}>Get a proposal</Link>
           </button>
         </div>
         {/* Child 2  */}
