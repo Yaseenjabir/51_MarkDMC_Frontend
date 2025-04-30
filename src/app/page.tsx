@@ -16,6 +16,8 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
+  console.log("Home page loaded");
+
   return (
     <main className="w-full">
       <HeroSection />
