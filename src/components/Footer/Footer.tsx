@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
+import { FaFacebook, FaInstagram, FaLinkedin, FaTiktok } from "react-icons/fa";
 
 export default function Footer() {
   return (
@@ -26,9 +26,36 @@ export default function Footer() {
               digital marketing solutions executed by top industry talent.
             </p>
             <div className="flex items-center gap-2 text-xl">
-              <FaFacebook />
-              <FaInstagram />
-              <FaTwitter />
+              <Link
+                target="_blank"
+                href={
+                  "https://www.facebook.com/share/16ENEvhptG/?mibextid=wwXIfr"
+                }
+              >
+                <FaFacebook />
+              </Link>
+              <Link
+                target="_blank"
+                href={
+                  "https://www.instagram.com/mark_digital_media_co?igsh=OGVlb2FyN2F5ZDRo"
+                }
+              >
+                <FaInstagram />
+              </Link>
+              <Link
+                target="_blank"
+                href={
+                  "https://www.tiktok.com/@markdmc121?_t=ZS-8vzFu35xALo&_r=1"
+                }
+              >
+                <FaTiktok />
+              </Link>
+              <Link
+                target="_blank"
+                href={"https://www.linkedin.com/company/mark-dmc/"}
+              >
+                <FaLinkedin />
+              </Link>
             </div>
           </div>
           {/* Where to?  */}
