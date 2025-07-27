@@ -13,6 +13,9 @@ export const metadata: Metadata = {
     "Discover smart, strategic, and results-driven digital marketing at Mark DMC. We craft tailored plans to attract, engage, and convert audiences, driving measurable growth for your business.",
   keywords:
     "digital marketing, SEO, paid media, content marketing, web development, Mark DMC, results-driven marketing, client growth",
+  other: {
+    "facebook-domain-verification": "jnaajaywv1dtmclb6e4ipwc0o7s873",
+  },
 };
 
 export default function Home() {
